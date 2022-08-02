@@ -17,6 +17,6 @@ env.reset()
 model = PPO('MlpPolicy', env, verbose = 1, tensorboard_log = logdir)
 
 timesteps = 100000
-for i in range(30):γ
+for i in range(30):
     model.learn(total_timesteps = timesteps, reset_num_timesteps = False, tb_log_name = "PPO")
     model.save(f"{models_dir} / {timesteps * i}")
